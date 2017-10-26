@@ -1,0 +1,67 @@
+# Modulos:
+
+Ver el archivo intro OPP de Juan.
+
+Los modulos son elementos que permiten compartir diferentes
+comportamientos (modulos) entre diferentes clases. Una clase
+puede tomar varios modulos.
+
+Los modulos se incluyen en una clase como 
+	include #module-name Para metodos de instancias
+	extend  #module-name Para metodos de clases.
+
+Los metodos se incluyen solamente en las clases que deseen 
+(o tengan ) usar las habilidades del metodo.
+
+ejemplo:
+	
+	class Dog
+		Aplica
+		include swimming 
+	end
+
+	class Fish
+		Aplica
+		include swimming
+	end
+
+	class Cat
+		No aplica 
+	end
+
+	module Swimming
+	 def method1
+
+	end
+	 def method 2
+
+	 end
+	 end
+
+	 Si estoy corriendo un modulo dentro de las clases seria asi:
+
+	 class Dog
+		Aplica
+		include swimming 
+
+		def method1
+
+	end
+	 def method 2
+
+	 end
+	end
+
+	En este caso los metodos del modulo swimming se agregan a la clase 
+	Dog y las variables de instancia que utilizen en los modulos deben
+	ser definidos 
+
+Con una tecnica de  Named arguments named se mejora la organizacion
+de los argumentos de entrara para el caso en el que se tienen muchos
+argumentos y se corre el riesgo de olvidar que es cada uno.
+
+En este metodo converites los argumentos de entrada en un unico
+argumento que es un hash con todos los elementos que le ingresan
+a la clase como llave y el valor.
+
+para llamarlo en la instancia se debe llamar la llave y el valor
